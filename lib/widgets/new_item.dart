@@ -19,7 +19,6 @@ class _NewItemState extends State<NewItem> {
   var _enteredQuantity = 1;
   var _selectedCategory = categories[Categories.vegetables]!;
   var _isSending = false;
-  String? _error;
 
   void _saveItem() async {
     if (_formKey.currentState!.validate()) {
@@ -55,11 +54,7 @@ class _NewItemState extends State<NewItem> {
             category: _selectedCategory,
           ),
         );
-      } catch (error) {
-        setState(() {
-          _error = 'Something went wrong. Please try agin later.';
-        });
-      }
+      } catch (error) {}
     }
   }
 
